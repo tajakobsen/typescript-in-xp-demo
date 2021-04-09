@@ -1,0 +1,4 @@
+<part>
+  <display-name i18n="commentList.displayName">Comment list</display-name>
+  <description i18n="commentList.description">List of comments</description>
+</part>

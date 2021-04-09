@@ -1,0 +1,4 @@
+<part>
+  <display-name i18n="blogDetails.displayName">Article details</display-name>
+  <description i18n="blogDetails.description">Detailed view of a blog-article</description>
+</part>

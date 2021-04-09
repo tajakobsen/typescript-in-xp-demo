@@ -1,0 +1,25 @@
+<article>
+  <img
+    class="img-fluid mt-3"
+    data-th-src="${imageUrl}"
+    data-th-alt="${imageAltText}"
+    src="#">
+
+  <h1
+    class="display-5 fw-bold text-center mt-3"
+    data-th-text="${title}">
+
+    Article title
+  </h1>
+
+  <p
+    class="lead my-4"
+    data-th-text="${preface}">
+
+    Preface
+  </p>
+
+  <p data-th-utext="${body}">
+    The body of the article
+  </p>
+</article>

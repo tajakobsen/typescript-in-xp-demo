@@ -1,0 +1,2 @@
+- Icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+- Icons made by [Catalin Fertu](https://www.flaticon.com/authors/catalin-fertu") [www.flaticon.com](https://www.flaticon.com/)

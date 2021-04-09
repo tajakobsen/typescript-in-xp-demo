@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page>
+  <display-name>Default</display-name>
+  <description>Default page template that can be used on most pages</description>
+
+  <regions>
+    <region name="header"/>
+    <region name="main"/>
+    <region name="footer"/>
+  </regions>
+</page>
