@@ -1,0 +1,39 @@
+<section class="col-lg-10 mt-5">
+  <h2>Comments from XP-developers</h2>
+
+  <article
+    data-th-each="comment : ${comments}"
+    class="d-flex align-items-top border-bottom mb-3 pb-3">
+
+    <div class="flex-shrink-0">
+      <img
+        src="#"
+        class="rounded-circle"
+        data-th-src="${comment.imageUrl}"
+        data-th-alt="${comment.altText}">
+    </div>
+
+    <div class="flex-grow-1 ms-3">
+      <div data-th-utext="${comment.text}">
+        This is some comment text
+      </div>
+
+      <div class="text-muted">
+        <span
+          data-th-text="${comment.author}"
+          data-th-remove="tag">
+
+          Wolfgang A. Mozart
+        </span>
+
+        <span
+          data-th-if="${displayDate}"
+          data-th-text="${' – ' + comment.date}"
+          data-th-remove="tag">
+
+          Oct. 15 2020
+        </span>
+      </div>
+    </div>
+  </article>
+</section>

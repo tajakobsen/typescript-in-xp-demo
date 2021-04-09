@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+  <display-name i18n="comment.displayName">Comment</display-name>
+  <description i18n="comment.description">Comment on an article</description>
+  <super-type>base:structured</super-type>
+
+  <form>
+    <input  name="name" type="TextLine">
+      <label i18n="comment.name">Name</label>
+      <occurrences minimum="1" maximum="1"/>
+    </input>
+
+    <input  name="text" type="HtmlArea">
+      <label i18n="comment.text">Text</label>
+      <occurrences minimum="1" maximum="1"/>
+    </input>
+
+    <input  name="imageId" type="ImageSelector">
+      <label i18n="comment.imageId">Image of author</label>
+      <occurrences minimum="1" maximum="1"/>
+    </input>
+  </form>
+</content-type>

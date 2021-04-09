@@ -27,6 +27,7 @@ dependencies {
     //include "com.enonic.xp:lib-websocket:${xpVersion}"
     //include "com.enonic.lib:lib-mustache:2.0.0"
     //include "com.enonic.lib:lib-util:3.0.0"
+    webjar "org.webjars:bootstrap:5.0.0-beta3"
 }
 
 repositories {
@@ -89,7 +90,7 @@ jar {
     exclude 'assets/styles/**/*.scss'
     exclude 'assets/styles/**/*.js'
 
-    dependsOn += clientWebpack
+    // dependsOn += clientWebpack
     dependsOn += serverWebpack
 }
 

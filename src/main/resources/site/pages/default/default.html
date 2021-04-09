@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" href="https://www.typescriptlang.org/favicon-32x32.png" type="image/png">
+  <title data-th-text="${pageTitle}">
+    My blogg
+  </title>
+
+  <link
+    href="../../../../../../build/resources/main/assets/styles/bundle.css"
+    data-th-href="${portal.assetUrl({'_path=styles/bundle.css'})}"
+    rel="stylesheet"/>
+
+  <script
+    src="../../../../../../build/webjars/META-INF/resources/webjars/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"
+    data-th-src="${portal.assetUrl({'_path=bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js'})}"
+    async>
+  </script>
+
+  <script
+    data-th-src="${portal.assetUrl({'_path=ts/bundle.js'})}"
+    src="../../../../../../build/resources/main/assets/ts/bundle.js"
+    async>
+  </script>
+</head>
+
+<body>
+<header>
+  <nav
+    class="navbar navbar-expand-lg"
+    data-th-classappend="${navbarClass}">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" data-th-text="${navbarTitle}">MyPage</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Articles</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main
+  id="main-content"
+  class="container"
+  data-portal-region="main">
+
+  <h1
+    data-th-if="${renderHiddenH1Element}"
+    data-th-text="${pageTitle}"
+    class="visually-hidden">
+
+    Page title
+  </h1>
+
+  <div
+    data-th-each="component : ${mainRegion.components}"
+    data-th-remove="tag">
+
+    <div
+      data-portal-component="${component.path}"
+      data-th-remove="tag">
+    </div>
+  </div>
+</main>
+</body>
+</html>

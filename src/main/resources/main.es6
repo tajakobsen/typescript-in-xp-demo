@@ -1,3 +1,3 @@
-import { init } from './lib/observe/observe';
+//import { init } from './lib/observe/observe';
 
-init();
+//init();

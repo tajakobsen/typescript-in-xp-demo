@@ -1,0 +1,10 @@
+<part>
+  <display-name i18n="commentList.displayName">Comment list</display-name>
+  <description i18n="commentList.description">List of comments</description>
+
+  <form>
+    <input name="displayDate" type="CheckBox">
+      <label i18n="commentList.displayDate">Display date</label>
+    </input>
+  </form>
+</part>
