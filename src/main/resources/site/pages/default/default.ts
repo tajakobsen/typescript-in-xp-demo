@@ -1,3 +1,7 @@
+import {DefaultPageConfig} from "./default-page-config";
+import {Response} from "enonic-types/controller";
+import {Region} from "enonic-types/portal";
+
 const {getContent} = __non_webpack_require__('/lib/xp/portal');
 const {render} = __non_webpack_require__('/lib/thymeleaf');
 
@@ -9,12 +13,12 @@ const NAVBAR_CLASS_MAP = {
   blue: 'navbar-dark bg-primary'
 };
 
-export function all() {
-  const content = getContent();
+export function all(): Response {
+  const content = getContent<any, DefaultPageConfig>();
 
   return {
     status: 200,
-    body: render(view,
+    body: render<ThymeleafParams>(view,
       {
         mainRegion: content.page.regions.main,
         pageTitle: content.displayName,
@@ -23,4 +27,11 @@ export function all() {
       }
     )
   };
+}
+
+interface ThymeleafParams {
+  mainRegion: Region;
+  pageTitle: string;
+  navbarTitle?: string;
+  navbarClass: string;
 }

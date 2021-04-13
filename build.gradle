@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id "com.github.node-gradle.node" version '2.2.4'
     id 'com.enonic.xp.app' version '2.0.0'
+    id 'no.item.xp.codegen' version '1.1.6'
 }
 
 app {
@@ -90,6 +91,7 @@ jar {
     exclude 'assets/styles/**/*.scss'
     exclude 'assets/styles/**/*.js'
 
+    dependsOn += generateTypeScript
     // dependsOn += clientWebpack
     dependsOn += serverWebpack
 }

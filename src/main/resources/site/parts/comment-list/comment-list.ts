@@ -1,4 +1,8 @@
 import {formatDate} from "../../../lib/utils";
+import {CommentListPartConfig} from "./comment-list-part-config";
+import {Content} from "enonic-types/content";
+import {Response} from "enonic-types/controller";
+import {Comment} from "../../content-types/comment/comment";
 
 const portalLib = __non_webpack_require__("/lib/xp/portal");
 const contentLib = __non_webpack_require__("/lib/xp/content");
@@ -6,27 +10,26 @@ const {render} = __non_webpack_require__("/lib/thymeleaf");
 
 const view = resolve("comment-list.html");
 
-export function get() {
-  const part = portalLib.getComponent();
+export function get(): Response {
+  const part = portalLib.getComponent<CommentListPartConfig>();
   const currentContent = portalLib.getContent();
 
-  const res = contentLib.query({
+  const res = contentLib.query<Comment>({
+    count: 500,
     query: `_parentPath LIKE '/content${currentContent._path}'`,
     contentTypes: [`${app.name}:comment`]
   });
 
-  const comments = res.hits.map(createSimpleComment);
-
   return {
     status: 200,
-    body: render(view, {
-      comments,
+    body: render<ThymeleafParams>(view, {
+      comments: res.hits.map(createSimpleComment),
       displayDate: part.config.displayDate
     })
   };
 }
 
-function createSimpleComment(commentContent) {
+function createSimpleComment(commentContent: Content<Comment>): SimpleComment {
   return {
     author: commentContent.data.name,
     text: commentContent.data.text,
@@ -40,4 +43,17 @@ function createSimpleComment(commentContent) {
     altText: `Profile image of ${commentContent.data.name}`,
     date: formatDate(commentContent.createdTime)
   };
+}
+
+interface ThymeleafParams {
+  comments: Array<SimpleComment>;
+  displayDate: boolean;
+}
+
+interface SimpleComment {
+  author: string;
+  text: string;
+  imageUrl: string;
+  altText: string;
+  date: string;
 }
