@@ -1,9 +1,8 @@
 import {Article} from "../../content-types/article/article";
 import {Content} from "enonic-types/content";
 import {Request, Response} from "enonic-types/controller";
-
-const portalLib = __non_webpack_require__("/lib/xp/portal");
-const {render} = __non_webpack_require__("/lib/thymeleaf");
+import portalLib from "/lib/xp/portal";
+import {render} from "/lib/thymeleaf";
 
 const view = resolve("article-view.html");
 

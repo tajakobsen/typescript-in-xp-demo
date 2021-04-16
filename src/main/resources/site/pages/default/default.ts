@@ -1,9 +1,8 @@
 import {DefaultPageConfig} from "./default-page-config";
 import {Response} from "enonic-types/controller";
 import {Region} from "enonic-types/portal";
-
-const {getContent} = __non_webpack_require__('/lib/xp/portal');
-const {render} = __non_webpack_require__('/lib/thymeleaf');
+import {getContent} from "/lib/xp/portal";
+import {render} from "/lib/thymeleaf";
 
 const view = resolve('default.html');
 
@@ -33,5 +32,5 @@ interface ThymeleafParams {
   mainRegion: Region;
   pageTitle: string;
   navbarTitle?: string;
-  navbarClass: string;
+  navbarClass?: string;
 }

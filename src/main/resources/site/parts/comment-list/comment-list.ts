@@ -3,10 +3,9 @@ import {CommentListPartConfig} from "./comment-list-part-config";
 import {Content} from "enonic-types/content";
 import {Response} from "enonic-types/controller";
 import {Comment} from "../../content-types/comment/comment";
-
-const portalLib = __non_webpack_require__("/lib/xp/portal");
-const contentLib = __non_webpack_require__("/lib/xp/content");
-const {render} = __non_webpack_require__("/lib/thymeleaf");
+import portalLib from "/lib/xp/portal";
+import contentLib from "/lib/xp/content";
+import {render} from "/lib/thymeleaf";
 
 const view = resolve("comment-list.html");
 
